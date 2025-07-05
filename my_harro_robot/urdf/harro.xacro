@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="harro" version="1.0" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <joint name="camera_joint" type="fixed">
+    <origin rpy="0.000 0.000 -1.571" xyz="0.036 -0.102 0.248" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+  <joint name="wh1_joint" type="continuous">
+    <limit lower="0" upper="0" effort="10.000" velocity="20.000" />
+    <origin rpy="-0.000 1.571 0.000" xyz="-0.158 -0.101 0.064" />
+    <parent link="base_link" />
+    <child link="wheel_1_link" />
+    <axis xyz="0.000 0.000 1.000" />
+  </joint>
+  <joint name="wh2_joint" type="continuous">
+    <limit lower="0" upper="0" effort="10.000" velocity="20.000" />
+    <origin rpy="-0.000 1.571 0.000" xyz="-0.158 0.103 0.064" />
+    <parent link="base_link" />
+    <child link="wheel_2_link" />
+    <axis xyz="0.000 0.000 1.000" />
+  </joint>
+  <joint name="wh3_joint" type="continuous">
+    <limit lower="0" upper="0" effort="10.000" velocity="20.000" />
+    <origin rpy="-0.000 1.571 0.000" xyz="0.158 -0.101 0.064" />
+    <parent link="base_link" />
+    <child link="wheel_3_link" />
+    <axis xyz="0.000 0.000 1.000" />
+  </joint>
+  <joint name="wh4_joint" type="continuous">
+    <limit lower="0" upper="0" effort="10.000" velocity="20.000" />
+    <origin rpy="-0.000 1.571 0.000" xyz="0.158 0.102 0.064" />
+    <parent link="base_link" />
+    <child link="wheel_4_link" />
+    <axis xyz="0.000 0.000 1.000" />
+  </joint>
+  <link name="base_link">
+    <inertial>
+      <inertia ixx="0.019" ixy="0.000" ixz="-0.000" iyy="0.022" iyz="0.002" izz="0.007" />
+      <origin rpy="0.000 0.000 0.000" xyz="0.000 -0.002 0.220" />
+      <mass value="1.000" />
+    </inertial>
+    <visual name="base">
+      <origin rpy="0.000 0.000 0.000" xyz="0.000 -0.020 0.294" />
+      <material name="mouth_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Body.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.000 0.000 0.000" xyz="0.000 -0.020 0.294" />
+      <material name="mouth_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Body.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="camera_link">
+    <inertial>
+      <inertia ixx="0.000" ixy="-0.000" ixz="0.000" iyy="0.000" iyz="0.000" izz="0.000" />
+      <origin rpy="0.000 0.000 0.000" xyz="0.000 0.000 0.000" />
+      <mass value="0.100" />
+    </inertial>
+    <visual name="camera">
+      <origin rpy="-1.571 0.000 0.000" xyz="0.000 0.000 0.000" />
+      <material name="camera_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Camera.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="-1.571 0.000 0.000" xyz="0.000 0.000 0.000" />
+      <material name="camera_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Camera.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wheel_1_link">
+    <inertial>
+      <inertia ixx="0.002" ixy="0.000" ixz="-0.000" iyy="0.001" iyz="-0.000" izz="0.001" />
+      <origin rpy="0.000 0.000 0.000" xyz="0.000 0.000 -0.000" />
+      <mass value="1.000" />
+    </inertial>
+    <visual name="wheel_1">
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 0.000 -0.000" />
+      <material name="inner_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-1.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 0.000 -0.000" />
+      <material name="inner_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-1.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wheel_2_link">
+    <inertial>
+      <inertia ixx="0.002" ixy="0.000" ixz="-0.000" iyy="0.001" iyz="-0.000" izz="0.001" />
+      <origin rpy="0.000 0.000 0.000" xyz="-0.000 0.000 -0.000" />
+      <mass value="1.000" />
+    </inertial>
+    <visual name="wheel_2">
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 -0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-2.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 -0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-2.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wheel_3_link">
+    <inertial>
+      <inertia ixx="0.002" ixy="0.000" ixz="-0.000" iyy="0.001" iyz="-0.000" izz="0.001" />
+      <origin rpy="0.000 0.000 0.000" xyz="-0.000 -0.000 -0.000" />
+      <mass value="1.000" />
+    </inertial>
+    <visual name="wheel_3">
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-3.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-3.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="wheel_4_link">
+    <inertial>
+      <inertia ixx="0.002" ixy="0.000" ixz="-0.000" iyy="0.001" iyz="-0.000" izz="0.001" />
+      <origin rpy="0.000 0.000 0.000" xyz="-0.000 -0.000 -0.000" />
+      <mass value="1.000" />
+    </inertial>
+    <visual name="wheel_4">
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 -0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-4.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0.000 -1.571 0.000" xyz="0.000 -0.000 -0.000" />
+      <material name="outer_color" />
+      <geometry>
+        <mesh filename="file://$(find my_harro_robot)/meshes/Wheel-4.dae" scale="1.000 1.000 1.000" />
+      </geometry>
+    </collision>
+  </link>
+  <material name="camera_color">
+    <color rgba="0.020 0.020 0.020 1.000" />
+  </material>
+  <material name="inner_color">
+    <color rgba="0.208 0.200 0.200 1.000" />
+  </material>
+  <material name="mouth_color">
+    <color rgba="0.031 0.796 0.780 1.000" />
+  </material>
+  <material name="outer_color">
+    <color rgba="0.000 0.000 0.000 1.000" />
+  </material>
+
+  <link name="spotlight_link">
+      <pose>0 0 1.2 0 0 0</pose> <!-- Adjust Z for light height -->
+  </link>
+
+  <joint name="spotlight_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="spotlight_link"/>
+  </joint>
+
+  <gazebo reference="spotlight_link">
+      <light type="spot" name="robot_spotlight">
+        <pose>0.0 -1.2 0.6 0 0 1.57</pose>
+        <visualize>false</visualize>
+        <diffuse>1 1 1 1</diffuse>
+        <specular>0.1 0.1 0.1 1</specular>
+        <attenuation>
+          <range>5</range>
+          <constant>0.5</constant>
+          <linear>0.01</linear>
+          <quadratic>0.001</quadratic>
+        </attenuation>
+        <direction>1 0 -0.4</direction>
+        <spot>
+          <inner_angle>0.3</inner_angle>
+          <outer_angle>0.7</outer_angle>
+          <falloff>0.5</falloff>
+        </spot>
+        <cast_shadows>true</cast_shadows>
+      </light>
+  </gazebo>
+
+  <gazebo>
+      <plugin name="control" filename="libgazebo_ros_control.so"/>
+  </gazebo>
+
+  <gazebo reference="camera_link">
+      <sensor name="camera" type="camera">
+        <pose>0 0 1 1.57 0 0</pose>
+        <visualize>false</visualize>
+        <update_rate>5</update_rate>
+        <camera>
+          <horizontal_fov></horizontal_fov>
+          <image>
+            <format>R8G8B8</format>
+            <width>640</width>
+            <height>480</height>
+          </image>
+          <clip>
+            <near>0.05</near>
+            <far>30</far>
+          </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <frame_name>harro_camera</frame_name>
+          <camera_name>harro_camera_feed</camera_name>
+          <image_topic_name>harro_img_raw</image_topic_name>
+        </plugin>
+      </sensor>
+  </gazebo>
+
+  <gazebo>
+    <plugin name="my_controller" filename="libgazebo_ros_diff_drive.so">
+        <num_wheel_pairs>2</num_wheel_pairs>
+
+        <left_joint>wh3_joint</left_joint>
+        <right_joint>wh1_joint</right_joint>
+
+        <left_joint>wh4_joint</left_joint>
+        <right_joint>wh2_joint</right_joint>
+        
+        <max_wheel_torque>100</max_wheel_torque>
+        <max_wheel_acceleration>5.0</max_wheel_acceleration>
+        <odometry_frame>odom</odometry_frame>
+        <robot_base_frame>base_link</robot_base_frame>
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>false</publish_odom_tf>
+        <publish_wheel_tf>true</publish_wheel_tf>
+        <command_topic>cmd_vel</command_topic>
+        <wheel_separation>0.204</wheel_separation>
+        <wheel_diameter>0.15</wheel_diameter>
+
+        <left_wheel_pid>
+          <p>120.0</p>
+          <i>1.0</i>
+          <d>0.5</d>
+        </left_wheel_pid>
+        <right_wheel_pid>
+          <p>120.0</p>
+          <i>1.0</i>
+          <d>0.5</d>
+        </right_wheel_pid>
+    </plugin>
+  </gazebo>
+</robot>
