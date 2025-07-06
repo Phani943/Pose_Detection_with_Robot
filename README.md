@@ -2,6 +2,8 @@
 
 <img src="render_img.png" alt="Robot Preview" width="400"/>
 
+<video src='demo_clip' width=180/>
+  
 <video src="demo_clip.mp4" controls width="600">
   Your browser does not support the video tag.
 </video>
