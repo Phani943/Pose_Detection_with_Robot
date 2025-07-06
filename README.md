@@ -1,13 +1,5 @@
 # Pose_Detection_with_Robot
 
+<video src="https://github.com/user-attachments/assets/345a8349-1527-48b4-9538-a2e9a7601faa" width="400"></video>
+
 <img src="render_img.png" alt="Robot Preview" width="400"/>
-
-<video src='demo_clip' width=180/>
-  
-<video src="demo_clip.mp4" controls width="600">
-  Your browser does not support the video tag.
-</video>
-
-<a href="https://raw.githubusercontent.com/Phani943/Pose_Detection_with_Robot/main/demo_clip.mp4" target="_blank">
-  <img src="render_img.png" alt="Robot Preview" width="400">
-</a>
