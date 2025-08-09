@@ -9,8 +9,11 @@ A comprehensive robotics project featuring a custom-designed robot with real-tim
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## 🎥 Demo Videos
-- **[Short Demo](short_demo.mp4)** - Quick project overview
-- **[Full Demo - "Harro Robo"](full_demo.mp4)** - Complete demonstration with audio
+- **[Short Demo](https://github.com/user-attachments/assets/91003354-3e35-4f93-8cc2-c6a074bf917f)** - Quick project overview
+- **[Full Demo - "Harro Robo"](https://github.com/user-attachments/assets/5b935d54-5257-49ef-b2e1-b21cbe44728d)** - Complete demonstration with audio
+
+## Robot Preview
+<img src="render_img.png" alt="Robot Preview"/>
 
 ## 🚀 Project Overview
 
